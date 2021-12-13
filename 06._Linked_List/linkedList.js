@@ -9,7 +9,8 @@ function LinkedList() {
     this.head = new Node("head");
     this.find = find;
     this.insert = insert;
-    // this.remove = remove;
+    this.findPrev = findPrev;
+    this.remove = remove;
     this.display = display;
 }
 
@@ -29,6 +30,24 @@ function insert(newEl, item) {
     curNode.next = newNode;
 }
 
+// remove()를 위해 필요
+// (삭제하는 노드의 다음노드가, 직전 노드의 다음노드가 되어야 한다.)
+function findPrev(item) {
+    let curNode = this.head;
+    while (curNode.next !== null && curNode.next.el !== item) {
+        curNode = curNode.next;
+    }
+    return curNode;
+}
+
+function remove(item) {
+    let prevNode = this.findPrev(item);
+    // 이전 노드의 next는 item이 들어있는 Node임
+    if (prevNode.next !== null) {
+        prevNode.next = prevNode.next.next;
+    }
+}
+
 function display() {
     let curNode = this.head;
     while (curNode.next !== null) {
@@ -44,4 +63,8 @@ let cities = new LinkedList();
 cities.insert("Seoul", "head");
 cities.insert("Kyeongkki", "Seoul");
 cities.insert("Incheon", "Kyeongkki");
+cities.display();
+console.log(cities.find("Seoul"));
+console.log("========================");
+cities.remove("Incheon");
 cities.display();
