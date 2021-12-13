@@ -23,9 +23,9 @@ function find(item) {
     return curNode;
 }
 
-function insert(newEl, item) {
+function insert(newEl, curEl) {
     let newNode = new Node(newEl);
-    let curNode = this.find(item);
+    let curNode = this.find(curEl);
     newNode.next = curNode.next;
     curNode.next = newNode;
 }
