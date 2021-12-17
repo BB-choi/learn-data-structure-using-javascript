@@ -1,17 +1,21 @@
-function Node(el) {
-    this.el = el;
-    this.next = null;
-    this.prev = null;
+class Node {
+    constructor(el) {
+        this.el = el;
+        this.next = null;
+        this.prev = null;
+    }
 }
 
-function LinkedList() {
-    this.head = new Node("head");
-    this.find = find;
-    this.findLastNode = findLastNode;
-    this.insert = insert;
-    this.remove = remove;
-    this.display = display;
-    this.revDisplay = revDisplay;
+class LinkedList {
+    constructor() {
+        this.head = new Node("head");
+        this.find = find;
+        this.findLastNode = findLastNode;
+        this.insert = insert;
+        this.remove = remove;
+        this.display = display;
+        this.revDisplay = revDisplay;
+    }
 }
 
 function insert(newEl, curEl) {

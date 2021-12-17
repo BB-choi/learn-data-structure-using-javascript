@@ -1,17 +1,21 @@
 // 노드의 데이터 저장
-function Node(el) {
-    this.el = el;
-    this.next = null;
+class Node {
+    constructor(el) {
+        this.el = el;
+        this.next = null;
+    }
 }
 
 // 연결리스트
-function LinkedList() {
-    this.head = new Node("head");
-    this.find = find;
-    this.insert = insert;
-    this.findPrev = findPrev;
-    this.remove = remove;
-    this.display = display;
+class LinkedList {
+    constructor() {
+        this.head = new Node("head");
+        this.find = find;
+        this.insert = insert;
+        this.findPrev = findPrev;
+        this.remove = remove;
+        this.display = display;
+    }
 }
 
 function find(item) {
