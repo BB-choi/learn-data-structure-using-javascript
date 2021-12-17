@@ -24,24 +24,31 @@ function insert(data) {
     if (this.root === null) {
         this.root = n;
     } else {
+        // 루트노드를 current로 설정
         let current = this.root;
         let parent;
 
         while (true) {
             parent = current;
+            // 삽입할 노드의 값(data)이 current노드보다 작으면
             if (data < current.data) {
+                // 새로운 current노드를 current의 왼쪽 자식 노드로 설정
                 current = current.left;
+                // 노드 왼쪽 자식노드에 값이 없으면 새로운 노드를 왼쪽 자식으로 삽입하고 반복문 종료
                 if (current === null) {
                     parent.left = n;
                     break;
                 }
             } else {
+                // current노드를 현재 노드의 오른쪽 자식 노드로 설정
                 current = current.right;
+                // 오른쪽 자식노드에 값이 없으면 새로운 노드를 오른쪽 자식으로 삽입하고 반복문 종료
                 if (current === null) {
                     parent.right = n;
                     break;
                 }
             }
+            // 삽입되지 않았으면 다음 루프를 진행하게 된다 (break로 빠져나가지 못함)
         }
     }
 }
