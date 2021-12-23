@@ -1,3 +1,5 @@
+// 최대 힙
+
 class maxHeap {
     constructor() {
         this.node = [];
@@ -6,7 +8,6 @@ class maxHeap {
         this.isEmpty = isEmpty;
         this.chkEnqueuePri = chkEnqueuePri;
         this.chkDequeuePri = chkDequeuePri;
-        // this.getHiPriChildIDX = getHiPriChildIDX;
         this.show = show;
         this.front = front;
         this.back = back;
